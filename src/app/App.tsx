@@ -4,6 +4,7 @@ import { RoutesComponent } from "./providers/routes/Routes";
 import "./styles/App.css";
 import { Provider } from "react-redux";
 import { store } from "./providers/store/store";
+import "@/shared/lang/i18n/i18n";
 
 function App() {
   return (
