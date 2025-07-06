@@ -1,5 +1,10 @@
+import { useTranslation } from "react-i18next";
+
 const Main = () => {
-  return <div className="text-white">Main</div>;
+
+  const { t } = useTranslation();
+
+  return <div className="text-white">{t("Main")}</div>;
 };
 
 export { Main };

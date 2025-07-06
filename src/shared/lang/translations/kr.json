@@ -1,1 +1,10 @@
-{}
+{
+    "Home": "홈",
+    "News": "뉴스",
+    "Guides": "가이드",
+    "Characters": "캐릭터",
+    "Sign_Up": "회원가입",
+    "Log_In": "로그인",
+    "Main": "기본"
+
+}

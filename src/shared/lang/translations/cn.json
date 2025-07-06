@@ -1,1 +1,9 @@
-{}
+{
+    "Home": "首页",
+    "News": "新闻",
+    "Guides": "指南",
+    "Characters": "角色",
+    "Sign_Up": "注册",
+    "Log_In": "登录",
+    "Main": "主要的"
+}
