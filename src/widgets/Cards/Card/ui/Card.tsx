@@ -5,8 +5,8 @@ import Autor from '@/shared/assets/icons/face-recognition-1-svgrepo-com.svg'
 
 const Card = () => {
     return (
-        <div className="border p-4 rounded shadow-2xl w-[80%] max-w-[500px] bg-gray-500">
-            <div className="relative h-60 mb-4">
+        <div className="border p-4 rounded shadow-2xl w-[80%] max-w-[500px] bg-gray-600">
+            <div className="relative h-60 mb-8">
                 <img
                     className="absolute w-full h-full object-cover rounded"
                     src={Headphones}
@@ -14,7 +14,7 @@ const Card = () => {
                 />
             </div>
             <div>
-                <p className="font-semibold">Apple Headphones</p>
+                <p className="font-semibold">Google Headphones</p>
                 <p className="font-thin">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
                     libero similique et consequuntur velit laudantium, a dolorem
