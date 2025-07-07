@@ -22,7 +22,7 @@ const LangSelector: React.FC = () => {
     <select
       value={i18n.language}
       onChange={handleChange}
-      className="p-2 bg-white text-black rounded"
+      className="p-2 bg-white text-black rounded cursor-pointer"
     >
       {languages.map((lang) => (
         <option key={lang.code} value={lang.code}>
