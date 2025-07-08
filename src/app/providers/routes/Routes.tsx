@@ -8,11 +8,15 @@ const RoutesComponent = () => {
     <>
       <Header />
       <div className="mt-[70px] ">
-        <Routes>
-          {Object.values(RoutesObject).map((route, index) => (
-            <Route path={route.path} element={route.element} key={index} />
-          ))}
-        </Routes>
+        <div className="flex w-full justify-center">
+          <div className="w-[90%]">
+            <Routes>
+              {Object.values(RoutesObject).map((route, index) => (
+                <Route path={route.path} element={route.element} key={index} />
+              ))}
+            </Routes>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
