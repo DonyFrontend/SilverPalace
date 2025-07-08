@@ -1,6 +1,6 @@
 import { langArray } from "@/shared/lang/data/lang";
 import { useTranslation } from "react-i18next";
-import lang_icon from "@/shared/assets/icons/Language.svg";
+import lang_icon from "@/shared/assets/icons/language.svg";
 
 const LangSelect = () => {
   const { i18n } = useTranslation();
