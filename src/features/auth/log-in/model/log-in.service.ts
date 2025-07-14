@@ -1,21 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { type AuthArg, type AuthResponce } from "../../types/auth-types";
-import { instance } from "@/shared/api/instance";
+import type { AuthArg, AuthResponce } from "../../types/auth-types";
 import type { ThunkConfig } from "@/app/providers/store/rtk-types";
+import { instance } from "@/shared/api/instance";
 import type { AxiosError } from "axios";
 
-const signUpTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
-  "auth/signup",
-  async ({ email, name, password }, { rejectWithValue }) => {
+const logInTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
+  "auth/login",
+  async ({ name, password }, { rejectWithValue }) => {
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(name);
     try {
-      const data = await instance.post("/auth/signup", {
-        email,
-        name,
-        password,
-      });
-      console.log(data);
-      localStorage.setItem("spg_token", data.data.token);
-      return data.data;
+      if (isEmail) {
+        const data = await instance.post("/api/login", { name, password });
+        localStorage.setItem("spg_token", data.data.token);
+        return data.data;
+      }
     } catch (error) {
       const err = error as AxiosError<{ message: string }>;
 
@@ -29,4 +27,4 @@ const signUpTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
   }
 );
 
-export { signUpTC };
+export { logInTC };

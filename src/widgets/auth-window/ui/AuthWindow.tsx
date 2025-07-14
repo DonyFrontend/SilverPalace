@@ -1,4 +1,4 @@
-import type { AuthArg, SignUpResponce } from "@/features/auth/types/auth-types";
+import type { AuthArg, AuthResponce } from "@/features/auth/types/auth-types";
 import { useAppDispatch } from "@/shared/hooks/useReduxHooks";
 import type { AsyncThunk } from "@reduxjs/toolkit";
 import React from "react";
@@ -20,7 +20,7 @@ export type AuthWindowProps = {
   buttonText: string;
   policy: React.ReactNode;
   func: AsyncThunk<
-    SignUpResponce,
+    AuthResponce,
     AuthArg,
     {
       rejectValue: string;

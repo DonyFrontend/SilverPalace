@@ -13,7 +13,7 @@ export interface IAuthSlice {
   error: string | null;
 }
 
-export interface SignUpResponce {
+export interface AuthResponce {
   message: string;
   user: IUser;
   token: string;
