@@ -7,13 +7,10 @@ import type { AxiosError } from "axios";
 const logInTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
   "auth/login",
   async ({ name, password }, { rejectWithValue }) => {
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(name);
     try {
-      if (isEmail) {
-        const data = await instance.post("/api/login", { name, password });
-        localStorage.setItem("spg_token", data.data.token);
-        return data.data;
-      }
+      const data = await instance.post("/auth/login", { name, password });
+      localStorage.setItem("spg_token", data.data.token);
+      return data.data;
     } catch (error) {
       const err = error as AxiosError<{ message: string }>;
 
