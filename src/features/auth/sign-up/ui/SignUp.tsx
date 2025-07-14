@@ -2,36 +2,37 @@ import { AuthWindow } from "@/widgets/auth-window";
 import type { AuthWindowProps } from "@/widgets/auth-window/ui/AuthWindow";
 import { useTranslation } from "react-i18next";
 import { signUpTC } from "../model/sign-up.service";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const { t } = useTranslation();
   const data: AuthWindowProps = {
     title: t("Sign_Up"),
-    buttonText: "Отправить",
+    buttonText: t("Submit"),
     inputs: [
       {
         id: "email",
         name: "email",
-        placeholder: "Введите почту",
+        placeholder: t("Email"),
         type: "email",
       },
       {
         id: "password",
         name: "password",
-        placeholder: "Введите пароль",
+        placeholder: t("Password"),
         type: "password",
         maxLength: 100,
       },
       {
         id: "name",
         name: "name",
-        placeholder: "Введите ваш ник",
+        placeholder: t("Nickname"),
         type: "text",
         maxLength: 50,
       },
     ],
-    policy: <div>Наша авторизация не относится к авторизаций гугл</div>,
-    undertext: <div>уже есть аккаунт ? тогда зачем ты сюда зашел, лол</div>,
+    policy: <div>{t("Notgoogle")}</div>,
+    undertext: <div>{t("HaveAccount")} <Link className="text-blue-500 hover:text-blue-600" to={'/login'}>{t("Log_In")}</Link></div>,
     func: signUpTC,
   };
 
