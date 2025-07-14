@@ -24,14 +24,24 @@ const Header = () => {
           <CustomLink to="/guides">{t("Guides")}</CustomLink>
           <CustomLink to="/characters">{t("Characters")}</CustomLink>
         </nav>
-        <div className="flex gap-5">
-          <button onClick={() => navigate("/sign-up")} className="cursor-pointer px-5 p-2 bg-blue-700 rounded-[10px]">
-            {t("Sign_Up")}
-          </button>
-          <button className="cursor-pointer px-5 p-2 border-2 border-blue-700 rounded-[10px]">
-            {t("Log_In")}
-          </button>
-        </div>
+        {localStorage.getItem("spg_token") ? (
+          <button className="cursor-pointer">Профиль</button>
+        ) : (
+          <div className="flex gap-5">
+            <button
+              onClick={() => navigate("/sign-up")}
+              className="cursor-pointer px-5 p-2 bg-blue-700 rounded-[10px]"
+            >
+              {t("Sign_Up")}
+            </button>
+            <button
+              onClick={() => navigate("/log-in")}
+              className="cursor-pointer px-5 p-2 border-2 border-blue-700 rounded-[10px]"
+            >
+              {t("Log_In")}
+            </button>
+          </div>
+        )}
         <LangSelect />
       </div>
     </header>
