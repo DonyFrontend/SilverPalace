@@ -2,7 +2,9 @@ import { Skeleton, ConfigProvider } from "antd";
 
 const SkeletonComponent = () => {
   return (
-    <ConfigProvider theme={{ components: { Skeleton: { color: "#1c1e29" } } }}>
+    <ConfigProvider
+      theme={{ components: { Skeleton: { gradientFromColor: "#1c1e29" } } }}
+    >
       <div className="flex flex-col gap-y-2">
         <Skeleton.Image
           active

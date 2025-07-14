@@ -8,8 +8,6 @@ type Props = {
 
 const CustomLink = ({ to, children }: Props) => {
   const match = useMatch(to);
-  console.log(match);
-  
 
   return (
     <Link

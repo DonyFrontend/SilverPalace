@@ -25,7 +25,7 @@ const Header = () => {
           <CustomLink to="/characters">{t("Characters")}</CustomLink>
         </nav>
         <div className="flex gap-5">
-          <button className="cursor-pointer px-5 p-2 bg-blue-700 rounded-[10px]">
+          <button onClick={() => navigate("/sign-up")} className="cursor-pointer px-5 p-2 bg-blue-700 rounded-[10px]">
             {t("Sign_Up")}
           </button>
           <button className="cursor-pointer px-5 p-2 border-2 border-blue-700 rounded-[10px]">
