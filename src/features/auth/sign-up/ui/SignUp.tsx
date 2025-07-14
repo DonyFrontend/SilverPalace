@@ -32,7 +32,7 @@ const SignUp = () => {
       },
     ],
     policy: <div>{t("Notgoogle")}</div>,
-    undertext: <div>{t("HaveAccount")} <Link className="text-blue-500 hover:text-blue-600" to={'/login'}>{t("Log_In")}</Link></div>,
+    undertext: <div>{t("HaveAccount")} <Link className="text-blue-500 hover:text-blue-600" to={'/log-in'}>{t("Log_In")}</Link></div>,
     func: signUpTC,
   };
 
