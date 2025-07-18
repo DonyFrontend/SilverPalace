@@ -7,6 +7,13 @@ import cn from "../translations/cn.json";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+export type LangType = { code: string; label: string };
+export type Languages = "ru" | "en" | "jp" | "kr" | "cn";
+
+export const lang: LangType = JSON.parse(
+  localStorage.getItem("spg_lang") || '{"code":"en","label":"English"}'
+);
+
 const resources: Resource = {
   ru: {
     translation: ru,
@@ -30,9 +37,9 @@ i18next
   .use(LanguageDetector)
   .init({
     resources,
-    lng: "ru",
+    lng: lang.code,
     debug: true,
-    fallbackLng: "kg",
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },

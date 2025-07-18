@@ -1,15 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { AuthArg, AuthResponce } from "../../types/auth-types";
+import type { NewsResponce } from "../types/news-types";
 import type { ThunkConfig } from "@/app/providers/store/rtk-types";
 import { instance } from "@/shared/api/instance";
 import type { AxiosError } from "axios";
 
-const logInTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
-  "auth/login",
-  async ({ name, password }, { rejectWithValue }) => {
+const newsTC = createAsyncThunk<NewsResponce, undefined, ThunkConfig<string>>(
+  "news/get",
+  async (_, { rejectWithValue }) => {
     try {
-      const data = await instance.post("/auth/login", { name, password });
-      localStorage.setItem("spg_token", data.data.token);
+      const data = await instance.get("/news");
       return data.data;
     } catch (error) {
       const err = error as AxiosError<{ message: string }>;
@@ -24,4 +23,4 @@ const logInTC = createAsyncThunk<AuthResponce, AuthArg, ThunkConfig<string>>(
   }
 );
 
-export { logInTC };
+export { newsTC };

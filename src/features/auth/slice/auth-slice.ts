@@ -22,6 +22,7 @@ const authSlice = createSlice({
   reducers: {
     logout(state) {
       state.user = null;
+      localStorage.removeItem("spg_token");
     },
   },
   extraReducers(builder) {
