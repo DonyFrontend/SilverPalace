@@ -1,4 +1,6 @@
-const langArray: { code: string; label: string }[] = [
+import { type LangType, lang } from "../i18n/i18n";
+
+const langArray: LangType[] = [
   { code: "ru", label: "Русский" },
   { code: "en", label: "English" },
   { code: "kr", label: "한국인" },
@@ -6,4 +8,15 @@ const langArray: { code: string; label: string }[] = [
   { code: "jp", label: "日本語" },
 ];
 
-export { langArray };
+const currentLangArray: LangType[] = [{ code: lang.code, label: lang.label }];
+
+for (let i = 0; i < langArray.length; i++) {
+  if (langArray[i].code !== lang.code) {
+    currentLangArray.push({
+      code: langArray[i].code,
+      label: langArray[i].label,
+    });
+  } else continue;
+}
+
+export { currentLangArray };

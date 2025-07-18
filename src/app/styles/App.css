@@ -1,8 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-  --color-main: #0D0F14;
+  --color-main: #0d0f14;
   --color-hover: #222733;
   --color-active: #1c1e29;
-  --margin-main: 20px
+  --margin-main: 20px;
+  --gap-article: 40px;
 }
