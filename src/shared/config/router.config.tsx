@@ -9,7 +9,7 @@ export enum RouterEnum {
   SIGNUP = "/sign-up",
   LOGIN = "/log-in",
   NEWS = "/news",
-  ABOUTUS = '/AboutUs'
+  ABOUTUS = '/AboutUs',
 }
 
 const LazyNews = lazy(() => import("@/pages/news/ui/News"));
