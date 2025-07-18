@@ -8,9 +8,12 @@ export enum RouterEnum {
   MAIN = "/",
   SIGNUP = "/sign-up",
   LOGIN = "/log-in",
-  NEWS = "/news",
   ABOUTUS = '/AboutUs',
+  CHARACTERS = '/characters',
+  NEWS = "/news",
 }
+
+const LazyCharacters = lazy(() => import("@/pages/characters/ui/Characters"))
 
 const LazyNews = lazy(() => import("@/pages/news/ui/News"));
 
@@ -40,4 +43,8 @@ export const RoutesObject: Record<RouterEnum, RouterType> = {
     path: RouterEnum.ABOUTUS,
     element: <AboutUs />,
   },
+  [RouterEnum.CHARACTERS]: {
+    path: RouterEnum.CHARACTERS,
+    element: <LazyCharacters />,
+  }
 };

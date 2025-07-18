@@ -1,0 +1,1 @@
+export { CharactersCard } from "./ui/CharactersCard";
