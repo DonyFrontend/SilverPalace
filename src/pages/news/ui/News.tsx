@@ -14,7 +14,7 @@ const News = () => {
 
   console.log(data[0]);
   if (error) {
-    return <h1>Error</h1>
+    return <h1>Error</h1>;
   }
 
   return (
@@ -31,8 +31,7 @@ const News = () => {
             <SkeletonComponent />
           </>
         ) : (
-          <NewsCard data={data[0]} />
-          // ""
+          data.map((item) => <NewsCard data={item} />)
         )}
       </section>
     </div>
