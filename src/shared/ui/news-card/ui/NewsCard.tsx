@@ -12,6 +12,9 @@ const NewsCard = ({ data }: { data: INew }) => {
   const lang = i18n.language as Languages;
   const navigate = useNavigate();
 
+  console.log(instance.getUri() + "/image/" + data?.base_image);
+  
+
   return (
     <article
       onClick={() => navigate(`${data?._id}`)}
