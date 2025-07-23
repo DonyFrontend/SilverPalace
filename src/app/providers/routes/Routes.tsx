@@ -1,24 +1,22 @@
+import { Main } from "@/pages/main";
 import { RoutesObject } from "@/shared/config/router.config";
-import { Footer } from "@/widgets/footer";
-import { Header } from "@/widgets/header";
+// import { Footer } from "@/widgets/footer";
+// import { Header } from "@/widgets/header";
 import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
 
 const RoutesComponent = () => {
   return (
     <>
-      <Header />
-      <div className="mt-[70px] ">
-        <div className="flex w-full justify-center">
-          <div className="w-[90%]">
-            <Routes>
-              {Object.values(RoutesObject).map((route, index) => (
-                <Route path={route.path} element={route.element} key={index} />
-              ))}
-            </Routes>
-          </div>
-        </div>
-      </div>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Main />} />
+
+        <Route element={<Layout />}>
+          {Object.values(RoutesObject).map((route, index) => (
+            <Route path={route.path} element={route.element} key={index} />
+          ))}
+        </Route>
+      </Routes>
     </>
   );
 };
