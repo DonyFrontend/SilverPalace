@@ -4,13 +4,17 @@ import { newsTC } from "../model/service/news.service";
 import { SkeletonComponent } from "@/widgets/skeleton/ui/Skeleton";
 import { NewsCard } from "@/shared/ui/news-card";
 
-const News = () => {
+type NewsProps = {
+  limit?: number;
+};
+
+const News = ({ limit }: NewsProps) => {
   const dispatch = useAppDispatch();
   const { data, error, loading } = useAppSelector((state) => state.news);
 
   useEffect(() => {
-    dispatch(newsTC());
-  }, [dispatch]);
+    dispatch(newsTC({ limit }));
+  }, [dispatch, limit]);
 
   console.log(data[0]);
   if (error) {
@@ -31,7 +35,7 @@ const News = () => {
             <SkeletonComponent />
           </>
         ) : (
-          data.map((item) => <NewsCard data={item} />)
+          data.map((item) => <NewsCard data={item} key={item._id} />)
         )}
       </section>
     </div>

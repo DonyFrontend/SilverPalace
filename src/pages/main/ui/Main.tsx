@@ -3,12 +3,13 @@ import { CustomLink } from "@/shared/ui/custom-link";
 import { SwiperComponent } from "@/widgets/swiper";
 import { useTranslation } from "react-i18next";
 import { swiper_data } from "../model/utils/swiper-data";
+import { News } from "@/pages/news";
 
 const Main = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col items-center text-white">
+    <div className="flex flex-col gap-y-16 items-center text-white">
       <div
         className="w-full h-[100svh] flex justify-center bg-cover bg-center relative"
         style={{ backgroundImage: `url(${background})` }}
@@ -33,11 +34,15 @@ const Main = () => {
                 Мы собираем всё в одном месте.
               </p>
             </div>
+            DonyFrontend/silver-palace-back
           </div>
           <div className="max-w-1/3">
             <SwiperComponent data={swiper_data} />
           </div>
         </div>
+      </div>
+      <div className="w-[90%] flex justify-center">
+        <News limit={3} />
       </div>
     </div>
   );
