@@ -12,6 +12,7 @@ export interface ICharacters {
     isPlayable: boolean,
     createdAt: string,
     updatedAt: string,
+    _id: string,
 }
 
 export interface CharactersResponse {
