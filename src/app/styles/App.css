@@ -7,3 +7,8 @@
   --margin-main: 20px;
   --gap-article: 40px;
 }
+
+:root {
+  --swiper-navigation-color: gray;
+  --swiper-pagination-color: gray;
+}
