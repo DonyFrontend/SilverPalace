@@ -22,22 +22,24 @@ const News = ({ limit }: NewsProps) => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-y-5 mt-main text-white">
-      <h1 className="text-[30px] font-bold">Недавние новости</h1>
-      <section className="grid grid-cols-3 auto-rows-auto gap-article">
-        {loading ? (
-          <>
-            <SkeletonComponent />
-            <SkeletonComponent />
-            <SkeletonComponent />
-            <SkeletonComponent />
-            <SkeletonComponent />
-            <SkeletonComponent />
-          </>
-        ) : (
-          data.map((item) => <NewsCard data={item} key={item._id} />)
-        )}
-      </section>
+    <div className="flex w-full justify-center">
+      <div className="w-main flex flex-col items-center justify-center gap-y-5 mt-main text-white">
+        <h1 className="text-[30px] font-bold">Недавние новости</h1>
+        <section className="grid grid-cols-3 auto-rows-auto gap-article">
+          {loading ? (
+            <>
+              <SkeletonComponent />
+              <SkeletonComponent />
+              <SkeletonComponent />
+              <SkeletonComponent />
+              <SkeletonComponent />
+              <SkeletonComponent />
+            </>
+          ) : (
+            data.map((item) => <NewsCard data={item} key={item._id} />)
+          )}
+        </section>
+      </div>
     </div>
   );
 };
