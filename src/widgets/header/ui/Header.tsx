@@ -8,7 +8,7 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="w-full h-[70px] fixed top-0 left-0 flex items-center justify-between px-10 bg-main text-white border-b border-b-white">
+    <header className="w-full h-[70px] z-50 fixed top-0 left-0 flex items-center justify-between px-10 bg-main text-white border-b border-b-white">
       <div className="w-[40%]">
         <p
           onClick={() => navigate("/")}

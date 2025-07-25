@@ -6,4 +6,10 @@
   --color-active: #1c1e29;
   --margin-main: 20px;
   --gap-article: 40px;
+  --width-main: 90%
+}
+
+:root {
+  --swiper-navigation-color: gray;
+  --swiper-pagination-color: gray;
 }
