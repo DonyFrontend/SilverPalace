@@ -5,15 +5,19 @@ import { SkeletonComponent } from "@/widgets/skeleton/ui/Skeleton";
 import { CharactersCard } from "@/widgets/Characters-card";
 import { useTranslation } from "react-i18next";
 
-const Characters = () => {
+type Props = {
+  limit?: number;
+};
+
+const Characters = ({ limit }: Props) => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
   const { data, error, loading } = useAppSelector((state) => state.characters);
 
   useEffect(() => {
-    dispatch(charactersTC());
-  }, [dispatch]);
+    dispatch(charactersTC({ limit }));
+  }, [dispatch, limit]);
 
   console.log(data[0]);
   if (error) {
@@ -35,7 +39,7 @@ const Characters = () => {
               <SkeletonComponent />
             </>
           ) : (
-            <CharactersCard data={data[0]} />
+            data.map((item) => <CharactersCard data={item} key={item._id} />)
           )}
         </section>
       </div>

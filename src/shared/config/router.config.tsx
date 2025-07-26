@@ -8,14 +8,15 @@ export enum RouterEnum {
   MAIN = "/",
   SIGNUP = "/sign-up",
   LOGIN = "/log-in",
-  ABOUTUS = '/AboutUs',
-  CHARACTERS = '/characters',
+  ABOUTUS = "/AboutUs",
+  CHARACTERS = "/characters",
   NEWS = "/news",
+  GUIDES = "/guides",
 }
 
-const LazyCharacters = lazy(() => import("@/pages/characters/ui/Characters"))
-
+const LazyCharacters = lazy(() => import("@/pages/characters/ui/Characters"));
 const LazyNews = lazy(() => import("@/pages/news/ui/News"));
+const LazyGuides = lazy(() => import("@/pages/guides/ui/Guides"));
 
 export interface RouterType {
   path: string;
@@ -46,5 +47,9 @@ export const RoutesObject: Record<RouterEnum, RouterType> = {
   [RouterEnum.CHARACTERS]: {
     path: RouterEnum.CHARACTERS,
     element: <LazyCharacters />,
-  }
+  },
+  [RouterEnum.GUIDES]: {
+    path: RouterEnum.GUIDES,
+    element: <LazyGuides />,
+  },
 };
