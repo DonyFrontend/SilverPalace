@@ -6,13 +6,20 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-    const [t] = useTranslation();
+  const [t] = useTranslation();
 
   return (
     <footer className="w-full mt-10 left-0 flex items-center py-5 px-10 bg-main text-white border-t border-t-white">
       <div className="flex flex-col w-[50%]">
         <h1 className="font-bold text-[35px]">SPG</h1>
-        <Link to={'/AboutUs'} className="text-[25px] pt-5 pb-2 font-semibold">{t("About_Us")}</Link>
+        <div className="mt-5 mb-2">
+          <Link
+            to="/AboutUs"
+            className="text-[25px] font-semibold inline"
+          >
+            {t("About_Us")}
+          </Link>
+        </div>
         <p className="pt-10 w-[60%]">© {t("Warning")}</p>
       </div>
 
